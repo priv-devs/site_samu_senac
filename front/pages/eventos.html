@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos | SAMU Dourados - MS</title>
+    <link rel="stylesheet" href="/front/css/home.css">
+    <link rel="stylesheet" href="/front/css/eventos.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="site-header__accent"></div>
+        <div class="site-header__content">
+            <a href="/front/pages/home.html" class="site-brand" aria-label="Página inicial do SAMU Dourados">
+                <img class="site-brand__logo" src="/front/imagens/samu-logo.png" alt="Logo SAMU">
+                <div class="site-brand__text">
+                    <span class="site-brand__name">SAMU</span>
+                    <span class="site-brand__number">192</span>
+                </div>
+            </a>
+
+            <nav class="site-nav" aria-label="Navegação principal">
+                <ul class="site-nav__list">
+                    <li class="site-nav__item"><a class="site-nav__link" href="/front/pages/home.html">Home</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="/front/pages/sobre.html">Sobre</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link" href="/front/pages/cursos.html">Cursos</a></li>
+                    <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="/front/pages/eventos.html" aria-current="page">Eventos</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="site-header__accent"></div>
+    </header>
+
+    <main class="events-main">
+        <!-- carousel removed (managed directly in templates) -->
+        <section class="events-hero" aria-label="Eventos do SAMU Dourados">
+            <div class="events-hero-card">
+                <div>
+                    <p class="section-tag">Eventos</p>
+                    <h1>Eventos em que o SAMU Dourados participou ou organizou</h1>
+                    <p class="events-intro">Nesta página listamos ações, campanhas, simulações e capacitações com participação do SAMU Dourados — filtros abaixo ajudam a encontrar eventos passados e futuros.</p>
+                </div>
+
+                <div class="events-hero-side">
+                    <div class="hero-mini-card">
+                        <span>Participe</span>
+                    </div>
+                    <div class="hero-mini-card">
+                        <span>Organize conosco</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="events-controls">
+            <div class="filters">
+                <button class="filter-btn filter-active">Todos</button>
+                <button class="filter-btn">Participou</button>
+                <button class="filter-btn">Organizou</button>
+                <button class="filter-btn">Próximos</button>
+            </div>
+
+            <div class="search-wrap">
+                <input class="search-input" type="search" placeholder="Buscar eventos por palavra-chave, local ou data">
+            </div>
+        </section>
+
+        <section class="events-list" aria-label="Lista de eventos">
+            <article class="event-card">
+                <div class="event-date">12 mar 2026</div>
+                <h3 class="event-title">Simulado Integrado de Resposta Rápida</h3>
+                <p class="event-meta">Local: Praça Central — Participação: Organizou</p>
+                <p class="event-desc">Exercício prático com equipes do SAMU, Corpo de Bombeiros e prefeitura, focado em atendimento a múltiplas vítimas.</p>
+                <div class="event-actions">
+                    <a class="btn-secondary" href="#">Ver detalhes</a>
+                </div>
+            </article>
+
+            <article class="event-card">
+                <div class="event-date">05 fev 2026</div>
+                <h3 class="event-title">Campanha Maio Amarelo — Educação no Trânsito</h3>
+                <p class="event-meta">Local: Escolas municipais — Participação: Participou</p>
+                <p class="event-desc">Palestras e demonstrações sobre primeiros socorros e segurança no trânsito para estudantes e professores.</p>
+                <div class="event-actions">
+                    <a class="btn-secondary" href="#">Ver detalhes</a>
+                </div>
+            </article>
+
+            <article class="event-card">
+                <div class="event-date">15 jan 2026</div>
+                <h3 class="event-title">Capacitação em Suporte Básico de Vida (SBV)</h3>
+                <p class="event-meta">Local: Unidade de Ensino — Participação: Organizou</p>
+                <p class="event-desc">Curso para agentes comunitários e profissionais da rede sobre reconhecimento de parada cardiorrespiratória e RCP básico.</p>
+                <div class="event-actions">
+                    <a class="btn-secondary" href="#">Ver detalhes</a>
+                </div>
+            </article>
+
+
+            <article class="event-card event-placeholder">
+                <div class="event-date">—</div>
+                <h3 class="event-title">Mais eventos em breve</h3>
+                <p class="event-meta">Acompanhe atualizações</p>
+                <p class="event-desc">Atualizaremos esta lista com eventos futuros e resumos das ações realizadas.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <img src="/front/imagens/samu-logo.png" alt="Logo do SAMU">
+        <a href="tel:192" class="call-button" aria-label="Ligar para o SAMU 192">
+            <span class="phone-icon" aria-hidden="true">📞</span>
+            <span>192</span>
+        </a>
+    </footer>
+    <script>
+        // Pequena interação: alterna visual de filtros (apenas UI)
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('filter-active'));
+                btn.classList.add('filter-active');
+            });
+        });
+    </script>
+</body>
+
+</html>
