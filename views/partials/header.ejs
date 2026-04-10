@@ -1,0 +1,22 @@
+<header class="site-header">
+    <div class="site-header__accent"></div>
+    <div class="site-header__content">
+        <a href="/" class="site-brand" aria-label="Página inicial do SAMU 192">
+            <img class="site-brand__logo" src="/front/imagens/samu-logo.png" alt="Logo SAMU 192">
+            <div class="site-brand__text">
+                <span class="site-brand__name">SAMU</span>
+                <span class="site-brand__number">192</span>
+            </div>
+        </a>
+
+        <nav class="site-nav" aria-label="Navegação principal">
+            <ul class="site-nav__list">
+                <li class="site-nav__item"><a class="site-nav__link <%= active === 'home' ? 'site-nav__link--active' : '' %>" href="/">Home</a></li>
+                <li class="site-nav__item"><a class="site-nav__link <%= active === 'sobre' ? 'site-nav__link--active' : '' %>" href="/sobre">Sobre</a></li>
+                <li class="site-nav__item"><a class="site-nav__link <%= active === 'cursos' ? 'site-nav__link--active' : '' %>" href="/cursos">Cursos</a></li>
+                <li class="site-nav__item"><a class="site-nav__link <%= active === 'eventos' ? 'site-nav__link--active' : '' %>" href="/eventos">Eventos</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="site-header__accent"></div>
+</header>

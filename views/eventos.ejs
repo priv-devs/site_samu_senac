@@ -1,0 +1,87 @@
+<%- include('partials/head', { title: 'Eventos | SAMU Dourados - MS', extraCss: ['/front/css/eventos.css'] }) %>
+    <%- include('partials/header', { active: 'eventos' }) %>
+
+        <main class="events-main">
+            <section class="events-hero" aria-label="Eventos do SAMU Dourados">
+                <div class="events-hero-card">
+                    <div>
+                        <p class="section-tag">Eventos</p>
+                        <h1>Eventos em que o SAMU Dourados participou ou organizou</h1>
+                        <p class="events-intro">Nesta página listamos ações, campanhas, simulações e capacitações com participação do SAMU Dourados — filtros abaixo ajudam a encontrar eventos passados e futuros.</p>
+                    </div>
+
+                    <div class="events-hero-side">
+                        <div class="hero-mini-card">
+                            <span>Participe</span>
+                        </div>
+                        <div class="hero-mini-card">
+                            <span>Organize conosco</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="events-controls">
+                <div class="filters">
+                    <button class="filter-btn filter-active">Todos</button>
+                    <button class="filter-btn">Participou</button>
+                    <button class="filter-btn">Organizou</button>
+                    <button class="filter-btn">Próximos</button>
+                </div>
+
+                <div class="search-wrap">
+                    <input class="search-input" type="search" placeholder="Buscar eventos por palavra-chave, local ou data">
+                </div>
+            </section>
+
+            <section class="events-list" aria-label="Lista de eventos">
+                <article class="event-card">
+                    <div class="event-date">12 mar 2026</div>
+                    <h3 class="event-title">Simulado Integrado de Resposta Rápida</h3>
+                    <p class="event-meta">Local: Praça Central — Participação: Organizou</p>
+                    <p class="event-desc">Exercício prático com equipes do SAMU, Corpo de Bombeiros e prefeitura, focado em atendimento a múltiplas vítimas.</p>
+                    <div class="event-actions">
+                        <a class="btn-secondary" href="#">Ver detalhes</a>
+                    </div>
+                </article>
+
+                <article class="event-card">
+                    <div class="event-date">05 fev 2026</div>
+                    <h3 class="event-title">Campanha Maio Amarelo — Educação no Trânsito</h3>
+                    <p class="event-meta">Local: Escolas municipais — Participação: Participou</p>
+                    <p class="event-desc">Palestras e demonstrações sobre primeiros socorros e segurança no trânsito para estudantes e professores.</p>
+                    <div class="event-actions">
+                        <a class="btn-secondary" href="#">Ver detalhes</a>
+                    </div>
+                </article>
+
+                <article class="event-card">
+                    <div class="event-date">15 jan 2026</div>
+                    <h3 class="event-title">Capacitação em Suporte Básico de Vida (SBV)</h3>
+                    <p class="event-meta">Local: Unidade de Ensino — Participação: Organizou</p>
+                    <p class="event-desc">Curso para agentes comunitários e profissionais da rede sobre reconhecimento de parada cardiorrespiratória e RCP básico.</p>
+                    <div class="event-actions">
+                        <a class="btn-secondary" href="#">Ver detalhes</a>
+                    </div>
+                </article>
+
+                <article class="event-card event-placeholder">
+                    <div class="event-date">—</div>
+                    <h3 class="event-title">Mais eventos em breve</h3>
+                    <p class="event-meta">Acompanhe atualizações</p>
+                    <p class="event-desc">Atualizaremos esta lista com eventos futuros e resumos das ações realizadas.</p>
+                </article>
+            </section>
+        </main>
+
+        <%- include('partials/footer') %>
+
+            <script>
+                // Pequena interação: alterna visual de filtros (apenas UI)
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('filter-active'));
+                        btn.classList.add('filter-active');
+                    });
+                });
+            </script>

@@ -1,0 +1,120 @@
+<%- include('partials/head', { title: 'SAMU 192 - Home', extraCss: [] }) %>
+    <%- include('partials/header', { active: 'home' }) %>
+
+        <main class="home-main">
+            <!-- carousel kept in template (same layout pattern as other pages) -->
+            <section class="carousel hero-carousel" aria-label="Destaques do SAMU">
+                <div class="carousel-container">
+                    <button class="prev" aria-label="Imagem anterior">&#8592;</button>
+
+                    <div class="carousel-track">
+                        <article class="carousel-slide">
+                            <div class="slide-visual slide-news-large">
+                                <span class="slide-center-text">Imagem 1</span>
+                                <p class="slide-summary">Resumo sobre a noticia</p>
+                            </div>
+                        </article>
+
+                        <article class="carousel-slide">
+                            <div class="slide-visual slide-news-large">
+                                <span class="slide-center-text">Imagem 2</span>
+                                <p class="slide-summary">Resumo sobre a noticia</p>
+                            </div>
+                        </article>
+
+                        <article class="carousel-slide">
+                            <div class="slide-visual slide-news-large">
+                                <span class="slide-center-text">Imagem 3</span>
+                                <p class="slide-summary">Resumo sobre a noticia</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <button class="next" aria-label="Próxima imagem">&#8594;</button>
+                </div>
+            </section>
+
+            <section class="news-grid" aria-label="Noticias e destaques">
+                <article class="feature-card">
+                    <div class="feature-card-body">
+                        <button class="mini-arrow" aria-label="Anterior">&#8592;</button>
+                        <button class="mini-arrow" aria-label="Próximo">&#8594;</button>
+                        <p>Resumo sobre a noticia</p>
+                    </div>
+                </article>
+
+                <div class="support-cards">
+                    <article class="info-card">
+                        <p>Resumo sobre a noticia</p>
+                    </article>
+                    <article class="info-card">
+                        <p>Resumo sobre a noticia</p>
+                    </article>
+                    <article class="info-card">
+                        <p>Resumo sobre a noticia</p>
+                    </article>
+                    <article class="info-card">
+                        <p>Resumo sobre a noticia</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="guidance-section" aria-label="Orientacoes sobre atendimento">
+                <article class="guidance-card">
+                    <h2>Quando chamar o samu</h2>
+                    <div class="guidance-placeholder"></div>
+                </article>
+
+                <article class="guidance-card">
+                    <h2>Quando não chamar o samu</h2>
+                    <div class="guidance-placeholder"></div>
+                </article>
+            </section>
+
+            <section class="map-section" aria-label="Localizacao">
+                <div class="map-card">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20893.81569595597!2d-54.81167832427936!3d-22.219593035465895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94890700556e2225%3A0x49b5079c13bc60aa!2sSAMU%20192%20-%20Futuras%20Instala%C3%A7%C3%B5es!5e0!3m2!1spt-BR!2sbr!4v1774398214115!5m2!1spt-BR!2sbr"
+                        width="420" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </section>
+        </main>
+
+        <%- include('partials/footer') %>
+
+            <script>
+                const track = document.querySelector('.carousel-track');
+                const slides = Array.from(track.querySelectorAll('.carousel-slide'));
+                const prevButton = document.querySelector('.prev');
+                const nextButton = document.querySelector('.next');
+                let currentIndex = 0;
+                let autoplayId;
+
+                function updateCarousel(index) {
+                    currentIndex = (index + slides.length) % slides.length;
+                    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                }
+
+                function startAutoplay() {
+                    autoplayId = setInterval(() => {
+                        updateCarousel(currentIndex + 1);
+                    }, 5000);
+                }
+
+                function resetAutoplay() {
+                    clearInterval(autoplayId);
+                    startAutoplay();
+                }
+
+                prevButton.addEventListener('click', () => {
+                    updateCarousel(currentIndex - 1);
+                    resetAutoplay();
+                });
+
+                nextButton.addEventListener('click', () => {
+                    updateCarousel(currentIndex + 1);
+                    resetAutoplay();
+                });
+
+                updateCarousel(0);
+                startAutoplay();
+            </script>
